@@ -4,3 +4,4 @@ pytube==15.0.0
 requests==2.27.1
 st_clickable_images==0.0.3
 streamlit==1.13.0
+python-dotenv
