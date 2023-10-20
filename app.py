@@ -74,7 +74,7 @@ def upload_to_AssemblyAI(save_location):
 
     return audio_url
 
-@st.cache_data
+@st.experimental_memo
 def start_analysis(audio_url):
 	
 	## Start transcription job of audio file
