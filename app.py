@@ -29,7 +29,7 @@ headers = {
 }
 
 
-@st.cache_data
+@st.experimental_memo
 def save_audio(url):
     yt = YouTube(url)
     video = yt.streams.filter(only_audio=True).first()
@@ -48,7 +48,7 @@ def save_audio(url):
     print(file_name)
     return yt.title, file_name, yt.thumbnail_url
 
-@st.cache_data
+@st.experimental_memo
 def upload_to_AssemblyAI(save_location):
     CHUNK_SIZE = 5242880
 
@@ -95,7 +95,7 @@ def start_analysis(audio_url):
 	print("Transcribing at", polling_endpoint)
 	return polling_endpoint
 
-@st.cache_data
+@st.experimental_memo
 def get_analysis_results(polling_endpoint):
 
     status = 'submitted'
